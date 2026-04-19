@@ -1,0 +1,14 @@
+.spinner-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px; /* Match spinner diameter */
+  height: 250px;
+}
+
+.spinner-content {
+  position: absolute;
+  /* Ensure text doesn't interfere with spinner pointer events if needed */
+  pointer-events: none;
+}

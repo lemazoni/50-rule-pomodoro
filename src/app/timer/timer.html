@@ -1,0 +1,12 @@
+<div class="spinner-wrapper">
+  <mat-progress-spinner mode="determinate" [value]="timeLeftPercent" diameter="250"></mat-progress-spinner>
+  <div class="spinner-content">
+    <span class="text-4xl">
+      {{timeLeft() | minuteToHour}}
+    </span>
+  </div>
+</div>
+
+<div class="my-4 flex justify-center ">
+  <button (click)="start()" matButton="filled">Basic</button>
+</div>
