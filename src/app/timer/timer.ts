@@ -2,10 +2,11 @@ import { Component, effect, input, OnDestroy, signal } from '@angular/core';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { TimePipe } from '../utils/time-pipe';
 import { MatButton } from '@angular/material/button';
+import { MatCard, MatCardContent } from '@angular/material/card';
 
 @Component({
   selector: 'app-timer',
-  imports: [MatProgressSpinner, TimePipe, MatButton],
+  imports: [MatProgressSpinner, TimePipe, MatButton, MatCard, MatCardContent],
   templateUrl: './timer.html',
   styleUrl: './timer.css',
 })
