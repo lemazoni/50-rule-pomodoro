@@ -4,13 +4,19 @@
       <p class="text-6xl text-center">Pomodoro 50% Rule</p>
     </div>
 
-  <div class="flex gap-4">
-    <app-time-select/>
-    <app-timer [initialValue]="2"/>
-    <app-time-select/>
+    <div class="flex gap-4">
+      <app-time-select [timerForm]="timerForm" />
+      <app-timer
+        [longRestTime]="timerForm.controls.restTime.value"
+        [sessions]="timerForm.controls.time.value"
+        (startAction)="intervalCreated($event)"
+        (endAction)="intervalFinished($event)"
+        (sessionCompleted)="sessionFinished($event)"
+      />
+      <app-type-counter
+        [playToDo]="playToDo"
+        [studiesToDo]="studiesToDo"
+      />
+    </div>
   </div>
-  </div>
-
-
-
 </div>

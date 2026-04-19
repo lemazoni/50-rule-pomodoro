@@ -1,16 +1,33 @@
 <mat-card>
   <mat-card-content>
-<div class="spinner-wrapper">
-  <mat-progress-spinner mode="determinate" [value]="timeLeftPercent" diameter="250"></mat-progress-spinner>
-  <div class="spinner-content">
-    <span class="text-4xl">
-      {{timeLeft() | minuteToHour}}
-    </span>
-  </div>
-</div>
-
-<div class="my-4 flex justify-center ">
-  <button (click)="start()" matButton="filled">Iniciar</button>
-</div>
+    <div class="flex flex-col items-center gap-6">
+    <div class="flex justify-center text-4xl m-4">
+      <span>
+        {{timerModeString()}}
+      </span>
+    </div>
+    <div class="spinner-wrapper w-full" >
+      <div>
+      </div>
+      <div >
+        <mat-progress-spinner mode="determinate" [value]="timeLeftPercent()" diameter="250"></mat-progress-spinner>
+      </div>
+      <div class="spinner-content">
+        <span class="text-4xl">
+          {{timeLeft() | minuteToHour}}
+        </span>
+      </div>
+    </div>
+    @if (!isRunning()){
+      <div class="my-4 flex justify-center ">
+        <button (click)="start()" matButton="filled">Iniciar</button>
+      </div>
+    }
+    <div class="stats">
+      <p>Sessões restantes: {{ sessionsRemaining() }}</p>
+      <p>Descansos curtos: {{ shortRestsRemaining() }}</p>
+      <p>Descansos longos: {{ longRestsRemaining() }}</p>
+    </div>
+    </div>
   </mat-card-content>
 </mat-card>
