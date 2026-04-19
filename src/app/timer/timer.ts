@@ -40,7 +40,7 @@ export class Timer implements OnDestroy {
     return {
       [TimerModeEnum.Focus]: 25 * 60,
       [TimerModeEnum.Rest]: 5 * 60,
-      [TimerModeEnum.LongRest]: this.longRestTime(), // Always grabs current signal value
+      [TimerModeEnum.LongRest]: this.longRestTime() * 60, // Always grabs current signal value
     };
   }
 
